@@ -4,7 +4,7 @@ const textInForm = document.getElementById("listtext");
 const formInput = document.getElementById("formInput");
 
 function storage() {
-  if (localStorage.length) {
+  if (localStorage.getItem("tasks")) {
     let session = localStorage.getItem("tasks");
     return JSON.parse(session);
   } else {
@@ -92,7 +92,7 @@ function editChoose(event) {
 }
 
 function oldSession() {
-  if (localStorage.length) {
+  if (localStorage.getItem("tasks")) {
     let arraySession = storage();
     listType.innerHTML = arraySession
       .map(
